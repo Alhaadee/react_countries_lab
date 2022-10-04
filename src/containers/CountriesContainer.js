@@ -6,15 +6,14 @@ import VisitedCountriesList from "../components/VisitedCountriesList";
 const CountriesContainer = () => {
 
     const [countries, setCountries] = useState([]);
-    const [visitedCountries, setVisitedCountries] = useState([]);
+    const [visitedCountries, setVisitedCountries] = useState(["test","test2"]);
 
     const fetchCountries = async () => {
         // console.log("Getting some country data");
         const response = await fetch("https://restcountries.com/v3.1/all")
         const jsonData = await response.json();
-        const countryNames= jsonData.map((country)=>country.name.official)
+        const countryNames= jsonData.map((country)=>country.name.common)
         setCountries(countryNames)
-        console.log(countries);
         // fetch data from the RESTCountries API
         // set the countries state to the result of the API call
         // pass it down to relevant components
@@ -23,6 +22,7 @@ const CountriesContainer = () => {
     const addVisited = (countryName) => {
         const updatedVisitedCountries = [...visitedCountries,countryName]
         setVisitedCountries(updatedVisitedCountries)
+        console.log(updatedVisitedCountries);
     }
 
     useEffect(() => {
