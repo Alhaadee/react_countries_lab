@@ -1,6 +1,9 @@
-const CountryListItem = () => {
+const CountryListItem = ({countryName, onClick}) => {
     return (
-        <li>One CountryListItem!</li>
+        <li>
+            {countryName}
+            <button onClick={onClick}>Select</button>
+        </li>
     );
 }
 
