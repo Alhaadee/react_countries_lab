@@ -3,7 +3,7 @@ import CountryListItem from "./CountryListItem";
 const CountriesList = ({countryNames,onClick}) => {
     return(
         <>
-            <h2>CountriesList here!</h2>
+            <h2>CountriesList!</h2>
             <ul>
                 {
                 countryNames.map((countryName,index)=>{

@@ -1,15 +1,21 @@
+import { useState } from "react";
+
 const CountryListItem = ({countryName, onClick}) => {
+
+    const [hasVisited,setHasVisited]=useState(false)
     
-    const addvisitedCountry = ()=>{
+    const handleClick = ()=>{
         const name = countryName
-        console.log(name);
         onClick(name)
+        setHasVisited(true)
     }
     
     return (
+
+        hasVisited ? <li style={{textDecoration: "line-through"}}> {countryName}</li> :
         <li>
             {countryName}
-            <button onClick={addvisitedCountry}>Select</button>
+            <button onClick={handleClick}>Select</button>
         </li>
     );
 }
