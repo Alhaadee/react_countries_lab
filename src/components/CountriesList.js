@@ -2,7 +2,7 @@ import CountryListItem from "./CountryListItem";
 
 const CountriesList = ({countryNames,onClick}) => {
     return(
-        <>
+        <div className="countries">
             <h2>CountriesList!</h2>
             <ul>
                 {
@@ -13,7 +13,7 @@ const CountriesList = ({countryNames,onClick}) => {
                 })
                 }
             </ul>
-        </>
+        </div>
     );
 }
 

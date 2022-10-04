@@ -30,10 +30,10 @@ const CountriesContainer = () => {
 
 
     return(
-        <>
+        <div className="countries_container">
             <CountriesList countryNames={countries} onClick={addVisited}/>
             <VisitedCountriesList visitedCountries={visitedCountries}/>
-        </>
+        </div>
     );
 }
 
